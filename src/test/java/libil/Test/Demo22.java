@@ -26,6 +26,7 @@ public class Demo22 extends BaseTest {
 
 		List<WebElement> page = driver.findElements(By.xpath("//a[@class='page-link shadow-sm px-3']"));
 		System.out.println("Total pages: " + page.size());
+		System.out.println("Hello");
 
 		for (int currentPage = 2; currentPage <= page.size() - 1; currentPage++) {
 
