@@ -33,7 +33,7 @@ public class AddCompanyPage extends BasePage {
 	}
 
 	public void selectCompanyType() {
-		Library.dropDown(SELECT_TYPE_DROPDOWN, "Company");
+		Library.dropDown(driver, SELECT_TYPE_DROPDOWN, "Company");
 		Library.threadSleep(2000);
 	}
 

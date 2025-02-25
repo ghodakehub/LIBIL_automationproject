@@ -1,158 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-12T11:56:26 IST" name="Suite" finished-at="2024-01-12T11:57:14 IST" duration-ms="47975">
+  <suite started-at="2025-02-25T13:35:36 IST" name="Default suite" finished-at="2025-02-25T13:35:53 IST" duration-ms="16793">
     <groups>
     </groups>
-    <test started-at="2024-01-12T11:56:26 IST" name="Test" finished-at="2024-01-12T11:57:14 IST" duration-ms="47975">
+    <test started-at="2025-02-25T13:35:36 IST" name="Default test" finished-at="2025-02-25T13:35:53 IST" duration-ms="16793">
       <class name="libil.Test.LoginPageTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.LoginPageTest@648c94da]" started-at="2024-01-12T11:56:26 IST" name="launchBrowser" finished-at="2024-01-12T11:57:01 IST" duration-ms="35073" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.LoginPageTest@5b84f14]" started-at="2025-02-25T13:35:36 IST" name="launchBrowser" finished-at="2025-02-25T13:35:42 IST" duration-ms="6018" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLoginPage()[pri:0, instance:libil.Test.LoginPageTest@648c94da]" started-at="2024-01-12T11:57:01 IST" name="verifyLoginPage" finished-at="2024-01-12T11:57:14 IST" duration-ms="12758" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginPage -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.LoginPageTest@648c94da]" started-at="2024-01-12T11:57:14 IST" name="closeBrowser" finished-at="2024-01-12T11:57:14 IST" duration-ms="107" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- libil.Test.LoginPageTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
-  <suite started-at="2024-01-12T11:58:14 IST" name="Suite (1)" finished-at="2024-01-12T11:58:57 IST" duration-ms="43024">
-    <groups>
-    </groups>
-    <test started-at="2024-01-12T11:58:14 IST" name="Test" finished-at="2024-01-12T11:58:57 IST" duration-ms="43024">
-      <class name="libil.Test.AddInvidualTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.AddInvidualTest@4b14918a]" started-at="2024-01-12T11:58:14 IST" name="launchBrowser" finished-at="2024-01-12T11:58:48 IST" duration-ms="34086" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyAddIndividual()[pri:0, instance:libil.Test.AddInvidualTest@4b14918a]" started-at="2024-01-12T11:58:48 IST" name="verifyAddIndividual" finished-at="2024-01-12T11:58:57 IST" duration-ms="8846" status="FAIL">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
+        <test-method signature="verifyLoginPage()[pri:1, instance:libil.Test.LoginPageTest@5b84f14]" started-at="2025-02-25T13:35:42 IST" name="verifyLoginPage" description=" Verify Login Page" finished-at="2025-02-25T13:35:47 IST" duration-ms="4747" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=120.0.6099.201)
-Build info: version: '4.15.0', revision: '1d14b5521b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='submi']"}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8fb50648b3ccbd4feb04ebbed25ea40d, clickElement {id=3009B7CF69BD0D14D2EF3A52DDBA4181_element_89}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.201, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\vaibh\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50163}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50163/devtoo..., se:cdpVersion: 120.0.6099.201, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (8fb50648b3ccbd4feb04ebbed25ea40d)] -> xpath: //select[@name='company']]] -> xpath: .//option[normalize-space(.) = "Individual"]]
-Session ID: 8fb50648b3ccbd4feb04ebbed25ea40d]]>
+Command: [92a0fe90ab747c61fede3877186852c2, findElement {using=xpath, value=//button[@type='submi']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\Super\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57827}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57827/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 92a0fe90ab747c61fede3877186852c2]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=120.0.6099.201)
-Build info: version: '4.15.0', revision: '1d14b5521b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='submi']"}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8fb50648b3ccbd4feb04ebbed25ea40d, clickElement {id=3009B7CF69BD0D14D2EF3A52DDBA4181_element_89}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.201, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\vaibh\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50163}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50163/devtoo..., se:cdpVersion: 120.0.6099.201, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (8fb50648b3ccbd4feb04ebbed25ea40d)] -> xpath: //select[@name='company']]] -> xpath: .//option[normalize-space(.) = "Individual"]]
-Session ID: 8fb50648b3ccbd4feb04ebbed25ea40d
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+Command: [92a0fe90ab747c61fede3877186852c2, findElement {using=xpath, value=//button[@type='submi']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\Super\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57827}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57827/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 92a0fe90ab747c61fede3877186852c2
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-at org.openqa.selenium.support.ui.Select.setSelected(Select.java:315)
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:119)
-at Libil.Utility.Library.dropDown(Library.java:96)
-at Libil.Page.AddIndividualPage.selectType(AddIndividualPage.java:64)
-at libil.Test.AddInvidualTest.verifyAddIndividual(AddInvidualTest.java:23)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy22.getWrappedElement(Unknown Source)
+at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:466)
+at Libil.Utility.Library.scrollTillElementDisplay(Library.java:30)
+at Libil.Utility.Library.click(Library.java:56)
+at Libil.Page.LoginPage.clickOnLoginButton(LoginPage.java:50)
+at libil.Test.LoginPageTest.verifyLoginPage(LoginPageTest.java:38)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1296)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddIndividual -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.AddInvidualTest@4b14918a]" started-at="2024-01-12T11:58:57 IST" name="closeBrowser" finished-at="2024-01-12T11:58:57 IST" duration-ms="89" status="PASS">
+        </test-method> <!-- verifyLoginPage -->
+        <test-method is-config="true" signature="finish(org.testng.ITestResult)[pri:0, instance:libil.Test.LoginPageTest@5b84f14]" started-at="2025-02-25T13:35:47 IST" name="finish" finished-at="2025-02-25T13:35:52 IST" duration-ms="5337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginPage status=FAILURE method=LoginPageTest.verifyLoginPage()[pri:1, instance:libil.Test.LoginPageTest@5b84f14] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- libil.Test.AddInvidualTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite (1) -->
-  <suite started-at="2024-01-12T11:57:15 IST" name="Suite (0)" finished-at="2024-01-12T11:58:14 IST" duration-ms="58754">
-    <groups>
-    </groups>
-    <test started-at="2024-01-12T11:57:15 IST" name="Test" finished-at="2024-01-12T11:58:14 IST" duration-ms="58754">
-      <class name="libil.Test.AddCompanyTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.AddCompanyTest@53dbe163]" started-at="2024-01-12T11:57:15 IST" name="launchBrowser" finished-at="2024-01-12T11:57:49 IST" duration-ms="34130" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyAddCompany()[pri:0, instance:libil.Test.AddCompanyTest@53dbe163]" started-at="2024-01-12T11:57:49 IST" name="verifyAddCompany" finished-at="2024-01-12T11:58:14 IST" duration-ms="24538" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddCompany -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.AddCompanyTest@53dbe163]" started-at="2024-01-12T11:58:14 IST" name="closeBrowser" finished-at="2024-01-12T11:58:14 IST" duration-ms="70" status="PASS">
+        </test-method> <!-- finish -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.LoginPageTest@5b84f14]" started-at="2025-02-25T13:35:52 IST" name="closeBrowser" finished-at="2025-02-25T13:35:53 IST" duration-ms="362" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- libil.Test.AddCompanyTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite (0) -->
-  <suite started-at="2024-01-12T12:00:23 IST" name="MasterSuite" finished-at="2024-01-12T12:00:23 IST" duration-ms="0">
-    <groups>
-    </groups>
-  </suite> <!-- MasterSuite -->
-  <suite started-at="2024-01-12T11:58:57 IST" name="Suite (2)" finished-at="2024-01-12T12:00:23 IST" duration-ms="85827">
-    <groups>
-    </groups>
-    <test started-at="2024-01-12T11:58:57 IST" name="Test" finished-at="2024-01-12T12:00:23 IST" duration-ms="85827">
-      <class name="libil.Test.ReportGenerationTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.ReportGenerationTest@176b3f44]" started-at="2024-01-12T11:58:57 IST" name="launchBrowser" finished-at="2024-01-12T11:59:31 IST" duration-ms="34134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyReportDisplay()[pri:0, instance:libil.Test.ReportGenerationTest@176b3f44]" started-at="2024-01-12T11:59:31 IST" name="verifyReportDisplay" finished-at="2024-01-12T12:00:23 IST" duration-ms="51640" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyReportDisplay -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.ReportGenerationTest@176b3f44]" started-at="2024-01-12T12:00:23 IST" name="closeBrowser" finished-at="2024-01-12T12:00:23 IST" duration-ms="50" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- libil.Test.ReportGenerationTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite (2) -->
+      </class> <!-- libil.Test.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

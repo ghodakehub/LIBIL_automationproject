@@ -61,9 +61,10 @@ public class AddIndividualPage extends BasePage {
 	}
 
 	public void selectType() {
-		Library.dropDown(SELECT_TYPE_DROPDOWN, "Individual");
 		Library.seleniumWait(20, driver);
-	}
+		Library.dropDown(driver, SELECT_TYPE_DROPDOWN, "Individual");
+		System.out.println("Individual selected");
+		       }
 
 	public void enterName(String IndividualName) {
 		Library.sendKeys(driver, NAME_TAB, "Value entered in NameTab", IndividualName);
@@ -91,7 +92,7 @@ public class AddIndividualPage extends BasePage {
 	}
 
 	public void selectState(String State) {
-		Library.dropDown(STATE_DROPDOWN, State);
+		Library.dropDown(driver, STATE_DROPDOWN, State);
 		Library.seleniumWait(20, driver);
 
 	}
@@ -117,5 +118,6 @@ public class AddIndividualPage extends BasePage {
 
 	public void clickOnLogOut() {
 		Library.click(driver, LOGOUT, "Clicked on LogOut. TestCase Passed");
+		Library.threadSleep(3000);
 	}
 }

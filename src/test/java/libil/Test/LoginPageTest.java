@@ -1,23 +1,67 @@
 package libil.Test;
 
+import java.io.IOException;
+
+import javax.mail.MessagingException;
+
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import Libil.Page.LoginPage;
-import Libil.Utility.BaseTest;
-import Libil.Utility.Library;
+import Libil.Utility.BaseTest2;
+import Libil.Utility.ConfingDataProvider;
+import Libil.Utility.ForMultiplemailReceipent;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
 
-public class LoginPageTest extends BaseTest {
+public class LoginPageTest extends BaseTest2 {
+	
+	
 
-	@Test
+	@Test(priority =1, description=" Verify Login Page")
+    @Feature("Login Feature")
+	@Description("Test case Description = Verify that the login functionality works correctly")
+	@Severity(SeverityLevel.CRITICAL)
+	@Step("Checking Login with valid credentials")
 
 	public void verifyLoginPage() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickOnFirstLoginButton();
 		loginPage.clickOnSecondLoginButton();
-		loginPage.enterEmailId("vaibhav.joshi@legitquest.com");
-		loginPage.enterPassword("Vaibhav@345");
+		loginPage.enterEmailId(ConfingDataProvider.Email);
+		loginPage.enterPassword(ConfingDataProvider.Password);
 		loginPage.clickOnLoginButton();
-		Library.threadSleep(5000);
+		loginPage.adminLogin();
+		boolean loginSuccess = true;
+        Assert.assertTrue(loginSuccess, "Login should be successful");
+        Libil.Utility.ScreenShotsUtility .addScreenshotToReport(driver, "addscreenshot");
 	}
 
+	@AfterMethod
+	public void finish(ITestResult result) throws IOException, MessagingException
+	{
+	if(ITestResult.FAILURE==result.getStatus())
+	{
+		
+		// Libil.Utility.ScreenShotsUtility.takeScreenshot(driver);
+		String screenshot=  Libil.Utility.ScreenShotsUtility.takeScreenshot(driver,"ScreenshotForLoginpage");
+		
+		String testUrl = driver.getCurrentUrl();  
+		 ForMultiplemailReceipent.sendEmail(
+           	   driver, new String[]{"ghodake6896@gmail.com"},
+           	    "LIBIL : Login Page ",
+           	    "Please check Libil login page not working , please find the attached screenshot for details." ,
+           	 screenshot , testUrl
+           	   
+           	);
+	
+	}
+	
+
+	}
 }

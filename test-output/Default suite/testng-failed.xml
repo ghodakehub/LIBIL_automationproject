@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="libil.Test.ReportGenerationTest">
+      <class name="libil.Test.LoginPageTest">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="verifyReportDisplay"/>
+          <include name="verifyLoginPage"/>
+          <include name="finish"/>
           <include name="closeBrowser"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- libil.Test.ReportGenerationTest -->
+      </class> <!-- libil.Test.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

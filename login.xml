@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="libil.Test.LoginPageTest"/>
+      <class name="libil.Test.HomePageTest"/>
+      <class name="libil.Test.SearchBarTest"/>
+      <class name="libil.Test.SearchOptionsResults"/>
+      <class name="libil.Test.UploadCSVReportTest"/>
+      <class name="libil.Test.UploadLibilReportTest"/>
+      <class name="libil.Test.UploadMCAreportTest"/>
+      <class name="libil.Test.viewReport"/>
+      <class name="libil.Test.NearSearchTest"/>
+      <class name="libil.Test.EditReportTest"/>
+      <class name="libil.Test.ExactMatch_downloadCSV"/>
+       <class name="libil.Test.ExactMatchDownloadJSON"/>
+        <class name="libil.Test.ExactSearchoptions_Downlaodexactdata"/>
+         
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

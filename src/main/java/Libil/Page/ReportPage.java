@@ -36,8 +36,15 @@ public class ReportPage extends BasePage {
 	@FindBy(xpath = "//div[@class='logo p-4 border-end']")
 	private WebElement LIBIL_LOGO;
 
+	
+	
+	
+	
+	
+	
 	public void scrollTillBottomPage() {
 		Library.scrollByPixelSize(driver, 10000);
+		Library.threadSleep(4000);
 	}
 
 	public void searchClient(String ClientName) {
@@ -54,7 +61,7 @@ public class ReportPage extends BasePage {
 			Library.threadSleep(3000);
 			Library.sendKeys(driver, SEARCH_BAR, "searchClient", ClientName);
 			Library.threadSleep(2000);
-
+ 
 			List<WebElement> elements = driver.findElements(By.xpath("//a[@class='text-decoration-none fw-semibold']"));
 			String searchQuery = ClientName;
 			WebElement foundElement = null;
@@ -88,7 +95,7 @@ public class ReportPage extends BasePage {
 	}
 
 	public void clickOnSubmitButton() {
-		Library.click(driver, SUBMIT_BUTTON, "ClickedOnSubmitButton");
+		Library.click(driver, SUBMIT_BUTTON, "Clicked on submit button");
 	}
 
 	public void selectCases(int num) {
@@ -113,7 +120,8 @@ public class ReportPage extends BasePage {
 	public void verifyReportDisplay() {
 
 		Library.threadSleep(10);
-		boolean REPORT_DIAPLAY = Library.waitForVisibilityOf(driver, LIBIL_LOGO).isDisplayed();
-		Assert.assertTrue(REPORT_DIAPLAY);
+		boolean REPORT_DISPLAY = Library.waitForVisibilityOf(driver, LIBIL_LOGO).isDisplayed();
+		Assert.assertTrue(REPORT_DISPLAY);
+		Library.threadSleep(5000);
 	}
 }

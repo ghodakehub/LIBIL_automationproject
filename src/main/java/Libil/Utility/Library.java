@@ -33,18 +33,30 @@ public class Library {
 	public static void scrollByPixelSize(WebDriver driver, int PixelSize) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0," + PixelSize + ")", "");
+		System.out.println(PixelSize);
 	}
 
+	
+	public static void scrollLeftToRight(WebDriver driver, int PixelSize) {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy("+PixelSize+",0)");
+		System.out.println("Left right moved for to click on three dot.");
+		
+		
+	}
+	
+	
 	public static void click(WebDriver driver, WebElement element, String LogMessege) {
 		try {
+			element.click();
+			System.out.println( LogMessege);
+		} catch (Exception e) {
+			
 			scrollTillElementDisplay(driver, element);
 			waitForVisibilityOf(driver, element);
 			element.click();
 			System.out.println(LogMessege);
-		} catch (Exception e) {
-			element.click();
-			System.out.println("Test failed at step : " + LogMessege);
-
 		}
 	}
 
@@ -91,8 +103,9 @@ public class Library {
 		return value;
 	}
 
-	public static void dropDown(WebElement element, String name) {
+	public static void dropDown(WebDriver driver, WebElement element, String name) {
 		Select select = new Select(element);
+		Library.seleniumWait(20, driver);
 		select.selectByVisibleText(name);
 	}
 
