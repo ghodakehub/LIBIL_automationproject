@@ -3,6 +3,7 @@ package Libil.Page;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,29 +31,17 @@ public class ExactMatch_downloadJSON extends BasePage {
 		                    throw new Exception("An error popup appeared during JSON download.");
 		                }
 
-		                // 4. Wait for the file to appear in the download directory
-		                boolean isDownloaded = FileUtility.isFileDownloaded(downloadDir, fileName, timeoutSeconds);
-		                if (!isDownloaded) {
-		                    throw new Exception("JSON file was not downloaded.");
-		                }
+		                FileUtility utils = new FileUtility();
+		                boolean isDownloaded = utils.waitForDownload("ReportData", Duration.ofMinutes(2));
+		                boolean isValid = utils.validateDownloadedJson("ReportData", "invoiceId", "789456");
 
-		                // 5. Validate the JSON file content
-		                String filePath = downloadDir + File.separator + fileName;
-		                boolean isValid = JsonUtility.isValidJson(filePath);
-		                if (!isValid) {
-		                    throw new Exception("Downloaded JSON file is invalid.");
-		                }
-
-		                // 6. Open and Display JSON File Contents
-		                String jsonContent = new String(Files.readAllBytes(Paths.get(filePath)));
-		                System.out.println("Downloaded JSON File Content:\n" + jsonContent);
-		                
-		                return true;
+		           
 
 		            } catch (Exception e) {
 		                //MailUtil.sendErrorMail("JSON Download Error", e.getMessage());
 		                return false;
 		            }
+				return false;
 		        }
 		    }
 		

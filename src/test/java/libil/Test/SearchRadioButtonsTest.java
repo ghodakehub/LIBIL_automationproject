@@ -6,6 +6,7 @@ import javax.mail.MessagingException;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Libil.Page.LoginPage;
@@ -14,7 +15,7 @@ import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.UtilityClass;
-
+@Listeners(Libil.Utility.AllureListeners.class)
 public class SearchRadioButtonsTest extends BaseTest2 {
 	
 	

@@ -7,6 +7,7 @@ import javax.mail.MessagingException;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Libil.Page.EditReportPage;
@@ -14,12 +15,12 @@ import Libil.Page.LoginPage;
 import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
-import Libil.Utility.UtilityClass;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
-
+@Listeners(Libil.Utility.newallurelistner.class)
 public class EditReportTest extends BaseTest2{
 	
 	
@@ -28,7 +29,7 @@ public class EditReportTest extends BaseTest2{
 	    @Description("Test to edit a report, save it, and verify that changes persist")
 	    @Step("Editing report details")
 	    public void VerifyEditAndSaveReport() throws InterruptedException, IOException {
-		 
+		 Allure.step("Login with Valid credentails and Navigate to Admin Home Page");
 		 LoginPage loginPage = new LoginPage(driver);
 	        loginPage.clickOnFirstLoginButton();
 	        loginPage.clickOnSecondLoginButton();
@@ -36,7 +37,7 @@ public class EditReportTest extends BaseTest2{
 	        loginPage.enterPassword(ConfingDataProvider.Password);
 	        loginPage.clickOnLoginButton();
 	        loginPage.adminLogin();
-	        
+	        Allure.step("Click on choose button options of Edit report and Verify can we edit report successfully");
 	       
 		 EditReportPage  editReportPage= new EditReportPage(driver);
 		 editReportPage.checkEditAndSavebuttonsOptions("TestSubject", "TestAddress");

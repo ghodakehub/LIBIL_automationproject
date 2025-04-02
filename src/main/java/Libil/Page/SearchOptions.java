@@ -86,7 +86,7 @@ public class SearchOptions extends BasePage {
 		 	                 ); 
 		                } else 
 		                {
-		                    System.out.println("Results found for option: " +radioButton.getText( ));
+		                    System.out.println("Results found for option: " +radioButton.getText());
 		                   
 		                }
 		                

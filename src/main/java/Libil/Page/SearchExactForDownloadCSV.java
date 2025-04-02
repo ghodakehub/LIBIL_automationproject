@@ -15,7 +15,7 @@ public class SearchExactForDownloadCSV extends BasePage {
 		super(driver);
 	}
 	
-	public void checkdownloadcsv() throws InterruptedException
+	public void checkdownloadcsv(String Keyword) throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
@@ -40,7 +40,7 @@ public class SearchExactForDownloadCSV extends BasePage {
 	            // Locate the search box and enter a company name
 	            WebElement searchBox = driver.findElement(By.xpath("//*[@id=\"searchText\"]"));
 	            searchBox.clear();
-	            searchBox.sendKeys("amazon");
+	            searchBox.sendKeys(Keyword);
 	            Thread.sleep(1000);
 	            
 	          WebElement exactbtn = driver.findElement(By.xpath("//*[@id=\"hideDiv\"]/section[1]/div/div/div[2]/div[1]/label"));

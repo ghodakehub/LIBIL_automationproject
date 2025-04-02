@@ -7,6 +7,7 @@ import javax.mail.MessagingException;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Libil.Page.HomePage;
@@ -15,12 +16,13 @@ import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.UtilityClass;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
-
+@Listeners(Libil.Utility.newallurelistner.class)
 public class HomePageTest  extends BaseTest2{
 
 
@@ -33,6 +35,7 @@ public class HomePageTest  extends BaseTest2{
 	@Severity(SeverityLevel.NORMAL)
 	@Step("Checking all requests on the admin home page")
 	public void CheckAllRequestOnHomePage() throws InterruptedException {
+		Allure.step("Login with Valid credentails and Navigate to Admin Home Page");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickOnFirstLoginButton();
 		loginPage.clickOnSecondLoginButton();
@@ -40,14 +43,11 @@ public class HomePageTest  extends BaseTest2{
 		loginPage.enterPassword(ConfingDataProvider.Password);
 		loginPage.clickOnLoginButton();
 		loginPage.adminLogin();
-		
+		Allure.step("Verify the paginations on home page");
 		HomePage page= new HomePage(driver);
 		page.checkallpaginations();
 		 Assert.assertTrue(page.isHomePageDisplayed(), "HomePage did not load successfully!");
 		 
-		 Libil.Utility.ScreenShotsUtility.addScreenshotToReport(driver,"for home page");
-			
-	  
 	}
 	
 	
@@ -57,7 +57,7 @@ public class HomePageTest  extends BaseTest2{
 	{
 	if(ITestResult.FAILURE==result.getStatus())
 	{
-		String screenshot=  Libil.Utility.ScreenShotsUtility.addScreenshotToReport(driver,"ScreenshotForHomepage");
+		String screenshot=  Libil.Utility.ScreenShotsUtility.takeScreenshot(driver,"ScreenshotForHomepage");
 		
 		
 		String testUrl = driver.getCurrentUrl();  

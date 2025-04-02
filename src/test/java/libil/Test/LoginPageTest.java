@@ -7,18 +7,21 @@ import javax.mail.MessagingException;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Libil.Page.LoginPage;
 import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 
+@Listeners(Libil.Utility.newallurelistner.class)
 public class LoginPageTest extends BaseTest2 {
 	
 	
@@ -30,6 +33,8 @@ public class LoginPageTest extends BaseTest2 {
 	@Step("Checking Login with valid credentials")
 
 	public void verifyLoginPage() {
+		Allure.step("Enter Email and password and click on login button");
+		
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickOnFirstLoginButton();
 		loginPage.clickOnSecondLoginButton();
@@ -37,9 +42,11 @@ public class LoginPageTest extends BaseTest2 {
 		loginPage.enterPassword(ConfingDataProvider.Password);
 		loginPage.clickOnLoginButton();
 		loginPage.adminLogin();
+		Allure.step("After login check Admin dashboard is display");
 		boolean loginSuccess = true;
         Assert.assertTrue(loginSuccess, "Login should be successful");
-        Libil.Utility.ScreenShotsUtility .addScreenshotToReport(driver, "addscreenshot");
+        
+        
 	}
 
 	@AfterMethod

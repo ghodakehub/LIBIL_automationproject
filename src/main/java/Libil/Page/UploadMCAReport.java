@@ -101,7 +101,7 @@ public class UploadMCAReport extends BasePage {
 	               
 	                // Ensure the original screen is visible
 	                WebElement originalScreen = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[contains(text(),'Admin Dashboard')]")));
-	                System.out.println("✅ Original screen is visible after upload.");
+	                System.out.println("Original screen is visible after upload.");
 
 	            	
 	            } catch (Exception e) {

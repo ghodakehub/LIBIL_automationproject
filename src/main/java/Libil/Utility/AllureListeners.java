@@ -1,5 +1,7 @@
 package Libil.Utility;
 
+import java.io.ByteArrayInputStream;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -7,66 +9,41 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 
 public class AllureListeners implements ITestListener {
  
-	private static String getTestMethodName(ITestResult iTestResult){
-		return iTestResult.getMethod().getConstructorOrMethod().getName();
-	}
+	public static byte[] captureScreenshot(WebDriver driver, String screenshotName) {
+        try {
+            if (driver instanceof TakesScreenshot) {
+                byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                Allure.addAttachment(screenshotName, new ByteArrayInputStream(screenshotBytes));
+                System.out.println("Screenshot captured and attached to Allure Report: " + screenshotName);
+                return screenshotBytes; // Return the screenshot
+            } else {
+                System.out.println("Driver does not support screenshots");
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to capture screenshot: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public static void attachText(String name, String content) {
+        Allure.addAttachment(name, "text/plain", content);
+    }
 	
-	@Attachment
-	public byte[] saveFailureScreenShot(WebDriver driver) {
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		return ts.getScreenshotAs(OutputType.BYTES);
-	}
 	
-	@Attachment(value="{0}",type="text/plain")
-	public static String saveTextMessage(String message) {
-		return message;
-	}
+	@Attachment(value = "URL on Failure", type = "text/plain")
+    public static String captureURL(WebDriver driver) {
+        try {
+            return "Failed URL: " + driver.getCurrentUrl();
+        } catch (Exception e) {
+            return "URL Not Available";
+        }
+    }
 	
-	@Override
-	public void onStart(ITestContext iTC){
-		System.out.println("i am in onStart method "+ iTC.getName());
-		iTC.setAttribute("WebDriver",BaseTest2.getDriver());
-	}
 	
-	@Override
-	public void onFinish(ITestContext iTC){
-		System.out.println("i am in onFinish method "+ iTC.getName());
-	}
 	
-	@Override
-	public void onTestStart(ITestResult iTR){
-		System.out.println("i am in onTestStart method "+ getTestMethodName(iTR));
-	}
-	
-	@Override
-	public void onTestSuccess(ITestResult iTR){
-		System.out.println("i am in onTestSuccess method "+ getTestMethodName(iTR));
-		
-		WebDriver driver = BaseTest2.getDriver();
-		if(driver instanceof WebDriver) {
-			System.out.println("screenshot capured for test case: "+ getTestMethodName(iTR));
-			saveFailureScreenShot(driver);
-		}
-		saveTextMessage(getTestMethodName(iTR)+" Passed and screenshot taken!");
-	}
-	
-	@Override
-	public void onTestFailure(ITestResult iTR) {
-		System.out.println("i am in onTestFailure method "+ getTestMethodName(iTR));
-		WebDriver driver = BaseTest2.getDriver();
-		if(driver instanceof WebDriver) {
-			System.out.println("screenshot capured for test case: "+ getTestMethodName(iTR));
-			saveFailureScreenShot(driver);
-		}
-		saveTextMessage(getTestMethodName(iTR)+" failed and screenshot taken!");
-	}
-	
-	@Override
-	public void onTestSkipped(ITestResult iTR) {
-		System.out.println("i am in onTestSkipped method "+ getTestMethodName(iTR));
-	}	
 }

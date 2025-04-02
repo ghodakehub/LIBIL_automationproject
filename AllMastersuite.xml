@@ -3,30 +3,35 @@
 <suite name="AllMastersuite">
 
 <listeners>
-<listener class-name="Libil.Utility.Listeners"></listener> 
+<listener class-name="Libil.Utility.newallurelistner"></listener> 
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="TestClass.LoginPageTest"/>
+      <class name="libil.Test.LoginPageTest"/>
       
-       <class name="TestClass.HomePageTest"/>
+       <class name="libil.Test.HomePageTest"/>
 
-       <class name="TestClass.SearchBarTest"/>
+       <class name="libil.Test.SearchBarTest"/>
 
-      <class name="TestClass.SearchOptionsResults"/>
+      <class name="libil.Test.SearchOptionsResults"/>
 
-      <class name="TestClass.UploadCSVReportTest"/>
+      <class name="libil.Test.UploadCSVReportTest"/>
       
-       <class name="TestClass.UploadLibilReportTest"/>
+       <class name="libil.Test.UploadLibilReportTest"/>
          
-       <class name="TestClass.UploadMCAreportTest"/>
+       <class name="libil.Test.UploadMCAreportTest"/>
                   
-       <class name="TestClass.viewReport"/>
-       <class name="TestClass.NearSearchTest"/>
-       <class name="TestClass.EditReportTest"/>
-       <class name="TestClass.ExactMatch_downloadCSV"/>
-       <class name="TestClass.ExactMatchDownloadJSON"/>
-       <class name="TestClass.ExactSearchoptions_Downlaodexactdata"/>
+       <class name="libil.Test.viewReport"/>
+       <class name="libil.Test.NearSearchTest"/>
+       <class name="libil.Test.EditReportTest"/>
+       <class name="libil.Test.ExactMatch_downloadCSV"/>
+       <class name="libil.Test.ExactSearchoptions_Downlaodexactdata"/>
+       <class name="libil.Test.JsondownloadTest"/>
+       <class name="libil.Test.ManageUserTest"/>
+       <class name="libil.Test.Editmanageusertest"/>
+       <class name="libil.Test.AddUser_DeleteuserTest"/>
+          <class name="libil.Test.Proximitydownlaodtest"/>
+             <class name="libil.Test.JsondownloadTest"/>
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->          

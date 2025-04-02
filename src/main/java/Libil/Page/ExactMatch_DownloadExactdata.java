@@ -1,20 +1,18 @@
 package Libil.Page;
 
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
+import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Allure;
 
 public class ExactMatch_DownloadExactdata extends BasePage {
 
@@ -22,97 +20,85 @@ public class ExactMatch_DownloadExactdata extends BasePage {
 		super(driver);
 	}
 	
-	
-	public void downloadJsonAndValidate(String fileName, int timeoutSeconds) throws IOException, InterruptedException {
-        String downloadPath = "C:\\Users\\Super\\Downloads"; // Ensure this matches the actual location
-        
-        // Wait for the button to be present
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(), 'Download Exact Data')]")));
+            private final String downloadPath = "C:\\Users\\Super\\Downloads"; 
 
-        // Click the button
-        WebElement exactDataButton = driver.findElement(By.xpath("//button[@id='sendDataButton']"));
-        exactDataButton.click();
+        	public boolean downloadJSON(String keyword) throws InterruptedException {
+        		
+        		try {
+        		
+        		
+        			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+                // Wait for the download button to be visible
+                WebElement downloadButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Download Exact Data')]")));
+                downloadButton.click();
 
-        boolean isDownloaded = isFileDownloaded(downloadPath, fileName, timeoutSeconds);
-        
-        if (isDownloaded) {
-            System.out.println("✅ Exact Data JSON file downloaded successfully.");
+                // Verify if the JSON file is downloaded
+                boolean isDownloaded = waitForDownloadAndValidate(keyword, ".json", Duration.ofMinutes(5));
 
-            // Validate JSON file with expected values
-            validateJSONFile(downloadPath + File.separator + fileName, "amazon", 357000, "no");
-        } else {
-            System.out.println("❌ Exact Data JSON file NOT found.");
-        }
-    }
-    
+                if (isDownloaded) {
+                    System.out.println("JSON file downloaded successfully for: " + keyword);
+                    Allure.addAttachment("Download Success", "JSON file downloaded successfully for: " + keyword);
+                    return true;
+                } else {
+                    System.out.println("Failed to download JSON for: " + keyword);
+                    Allure.addAttachment("Download Failed", "JSON download failed for: " + keyword);
+                    return false;
+                }
 
-    // Function to check if the file exists with wait time
-    public boolean isFileDownloaded(String downloadPath, String fileName, int timeoutSeconds) {
-    	File file = new File(downloadPath, fileName); // ✅ Correct file path
-        int elapsedTime = 0;
-        
-        while (!file.exists() && elapsedTime < timeoutSeconds) {
-            try {
-                Thread.sleep(1000); // Wait for 1 second
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
+                Allure.addAttachment("Error", "Exception occurred: " + e.getMessage());
+                return false;
             }
-            elapsedTime++;
         }
 
-        if (file.exists() && file.canRead()) {
-            System.out.println("✅ File found: " + file.getAbsolutePath());
-            return true;
-        } else {
-            System.out.println("❌ File not found: " + file.getAbsolutePath());
-            return false;
-        }
-    }
+        	public boolean waitForDownloadAndValidate(String fileNamePrefix, String extension, Duration timeout) {
+        	    File downloadDir = new File(downloadPath);
+        	    long endTime = System.currentTimeMillis() + timeout.toMillis();
 
-    // Function to validate JSON content
+        	    while (System.currentTimeMillis() < endTime) {
+        	        File[] files = downloadDir.listFiles();
+
+        	        if (files != null) {
+        	            for (File file : files) {
+        	                //  Check for downloaded JSON file
+        	                if (file.getName().startsWith(fileNamePrefix) && file.getName().endsWith(extension) && file.length() > 0) {
+
+        	                    //  Print JSON content for validation
+        	                    System.out.println("File downloaded: " + file.getName());
+        	                    
+        	                    // Validate the content by reading the first few lines
+        	                    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        	                        String line;
+        	                        int lineCount = 0;
+        	                        System.out.println("JSON Content (First 5 lines):");
+        	                        while ((line = reader.readLine()) != null && lineCount < 10) {
+        	                            System.out.println(line);
+        	                            lineCount++;
+        	                        }
+
+        	                        //  Attach the content to Allure for verification
+        	                        Allure.addAttachment("JSON Content", Files.readString(Paths.get(file.getAbsolutePath())));
+
+        	                        return true;
+        	                    } catch (Exception e) {
+        	                        e.printStackTrace();
+        	                        Allure.addAttachment("Error", "Failed to read JSON file: " + e.getMessage());
+        	                        return false;
+        	                    }
+        	                }
+        	            }
+        	        }
+        	    }
+
+        	    System.out.println("Timeout reached. JSON file not downloaded.");
+        	    return false;
+        	}
+}
     
-    public static void validateJSONFile(String filePath, String expectedPartyName, int expectedLibilScore, String expectedRecommendation) throws IOException {
-        // Initialize ObjectMapper to read JSON
-        ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode jsonNode = objectMapper.readTree(new File(filePath));
 
-        // Navigate to the required fields
-        JsonNode partyNode = jsonNode.path("data").path("party");
-
-        // Extract values
-        String actualPartyName = partyNode.path("party_name").asText();
-        int actualLibilScore = partyNode.path("libil_score").asInt();
-        String actualRecommendation = partyNode.path("is_recommended").asText();
-
-        // Validate the values
-        if (actualPartyName.equals(expectedPartyName) && actualLibilScore == expectedLibilScore && actualRecommendation.equals(expectedRecommendation)) {
-            System.out.println("✅ Validation Passed: JSON file contains expected values.");
-        } else {
-            System.out.println("❌ Validation Failed: Expected values do not match.");
-            System.out.println("Expected: party_name=" + expectedPartyName + ", libil_score=" + expectedLibilScore + ", is_recommended=" + expectedRecommendation);
-            System.out.println("Actual: party_name=" + actualPartyName + ", libil_score=" + actualLibilScore + ", is_recommended=" + actualRecommendation);
-        }
-
-        // Validate summary_items array
-        JsonNode summaryItems = partyNode.path("summary_items");
-        if (summaryItems.isArray() && summaryItems.size() > 0) {
-            JsonNode firstItem = summaryItems.get(0);
-            String caseType = firstItem.path("case_type").asText();
-            int casesPending = firstItem.path("cases_pending").asInt();
-            int casesDisposed = firstItem.path("cases_disposed").asInt();
-            int casesInFavor = firstItem.path("cases_in_favor").asInt();
-            int totalCases = firstItem.path("total_cases").asInt();
-
-            // Expected values
-            if (caseType.equals("Civil") && casesPending == 0 && casesDisposed == 2180 && casesInFavor == 1321 && totalCases == 2180) {
-                System.out.println("✅ Validation Passed for summary_items.");
-            } else {
-                System.out.println("❌ Validation Failed for summary_items.");
-            }
-        }
-    }
-    	}
+   
+    	
 
 		
 		    

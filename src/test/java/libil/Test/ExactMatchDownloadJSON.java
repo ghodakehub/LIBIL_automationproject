@@ -7,6 +7,7 @@ import javax.mail.MessagingException;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Libil.Page.ExactMatch_downloadJSON;
 import Libil.Page.LoginPage;
@@ -15,11 +16,12 @@ import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.UtilityClass;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-
+@Listeners(Libil.Utility.newallurelistner.class)
 public class ExactMatchDownloadJSON extends BaseTest2{
 
 
@@ -31,6 +33,7 @@ public class ExactMatchDownloadJSON extends BaseTest2{
 	@Description("Test Case Descriptions = Verify for exact search JSON file downlaoded successfully")
 	@Severity(SeverityLevel.NORMAL)
 	public void VerifydownloadJSONoptions() throws InterruptedException {
+		Allure.step("Login with Valid credentails and Navigate to Admin Home Page");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickOnFirstLoginButton();
 		loginPage.clickOnSecondLoginButton();
@@ -39,15 +42,15 @@ public class ExactMatchDownloadJSON extends BaseTest2{
 		loginPage.clickOnLoginButton();
 		loginPage.adminLogin();
 		
-		  // Navigate to the "Exact match" search option
+		Allure.step("Enter keyword in search and select exact search option");
         SearchRadioButtons radio = new SearchRadioButtons(driver);
         radio.ClickonExactsearchOption();
 
-        // Use the page object method to download and validate JSON
+        Allure.step("click on downlaod json button and check is downloaded");
         ExactMatch_downloadJSON report = new ExactMatch_downloadJSON(driver);
-        // Update the directory and file name to your actual values (e.g., "C:\\Downloads" and "cases.json")
+        
         boolean isDownloadValid = report.verifydownlaodJSON("C:\\Users\\Super\\Downloads", "data.json", 20);
-
+        Allure.step("verify downloaded json file");
         // Assert that the JSON file was downloaded and is valid
        Assert.assertTrue(isDownloadValid, "JSON file download or validation failed!");
     }

@@ -7,6 +7,7 @@ import javax.mail.MessagingException;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Libil.Page.ExactMatch_DownloadExactdata;
 import Libil.Page.LoginPage;
@@ -16,11 +17,12 @@ import Libil.Utility.ConfigReader;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.UtilityClass;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-
+@Listeners(Libil.Utility.newallurelistner.class)
 public class ExactSearchoptions_Downlaodexactdata extends BaseTest2{
 
 
@@ -32,6 +34,7 @@ public class ExactSearchoptions_Downlaodexactdata extends BaseTest2{
 	@Description("Test Case Descriptions = Verify for exact search exact data JSON file downlaoded successfully")
 	@Severity(SeverityLevel.NORMAL)
 	public void VerifyExactdatadownlaodoption() throws InterruptedException, IOException {
+		Allure.step("Login with Valid credentails and Navigate to Admin Home Page");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickOnFirstLoginButton();
         loginPage.clickOnSecondLoginButton();
@@ -40,30 +43,14 @@ public class ExactSearchoptions_Downlaodexactdata extends BaseTest2{
         loginPage.clickOnLoginButton();
         loginPage.adminLogin();
 
-        
+        Allure.step("Enter keyword in search and select exact search option");
         SearchExactForDownloadCSV radio = new SearchExactForDownloadCSV(driver);
-        radio.checkdownloadcsv();
+        radio.checkdownloadcsv("Tata");
 
-        
+        Allure.step("click on download exact button and check is downlaod json file");
         ExactMatch_DownloadExactdata report = new ExactMatch_DownloadExactdata(driver);
+        report.downloadJSON("Tata");
         
-       
-        String downloadPath = "C:\\Users\\Super\\Downloads";
-        String fileName = "amazon.json";
-        int timeoutSeconds = 40;
-
-       
-        report.downloadJsonAndValidate("amazon.json", 40);
-
-        
-        boolean isDownloaded = report.isFileDownloaded(downloadPath, fileName, timeoutSeconds);
-        Assert.assertTrue(isDownloaded, "for exact match json file was not downloaded successfully.");
-        if (isDownloaded) {
-            // Validate JSON content if file exists
-            ExactMatch_DownloadExactdata.validateJSONFile(downloadPath + "\\" + fileName, "amazon", 357000, "no");
-        } else {
-            System.out.println("Test Failed: JSON file not downloaded.");
-        }
     }
     
 
@@ -76,12 +63,12 @@ public class ExactSearchoptions_Downlaodexactdata extends BaseTest2{
 	{
 	if(ITestResult.FAILURE==result.getStatus())
 	{
-		String screenshot=  Libil.Utility.ScreenShotsUtility.addScreenshotToReport(driver,"screenshotforExactdatadownlaodJSONfile");
+		String screenshot=  Libil.Utility.ScreenShotsUtility.takeScreenshot(driver,"screenshotforExactdatadownlaodJSONfile");
 		
 		String testUrl = driver.getCurrentUrl();  
 		 ForMultiplemailReceipent.sendEmail(
            	   driver, new String[]{"ghodake6896@gmail.com"},
-           	    "LIBIL : ExactSearch optionsC(download exactdata button)",
+           	    "LIBIL : ExactSearch options(download exactdata button)",
            	    "Please check for exact search download exactdata button not working, please find the attached screenshot for details." ,
            	 screenshot , testUrl
            	   

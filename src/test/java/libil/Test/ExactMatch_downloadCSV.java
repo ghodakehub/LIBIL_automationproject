@@ -4,23 +4,23 @@ import java.io.IOException;
 
 import javax.mail.MessagingException;
 
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Libil.Page.LoginPage;
 import Libil.Page.SearchExactForDownloadCSV;
-import Libil.Page.DownloadCSV;
+import Libil.Page.ExactMatch_DowloadCSV;
 import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
-import Libil.Utility.UtilityClass;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-
+@Listeners(Libil.Utility.newallurelistner.class)
 public class ExactMatch_downloadCSV extends BaseTest2 {
 
 	
@@ -31,7 +31,7 @@ public class ExactMatch_downloadCSV extends BaseTest2 {
     @Description("Test Case Descriptions = Verify the exact search  download csv button working and file is downloaded successfully")
     @Severity(SeverityLevel.NORMAL)
     public void verifyExactMatch_DownloadCSVoption() throws InterruptedException, IOException {
-        // Login flow
+		Allure.step("Login with Valid credentails and Navigate to Admin Home Page");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickOnFirstLoginButton();
         loginPage.clickOnSecondLoginButton();
@@ -40,33 +40,12 @@ public class ExactMatch_downloadCSV extends BaseTest2 {
         loginPage.clickOnLoginButton();
         loginPage.adminLogin();
 
-        // Navigate to the "Exact match" search option
+        Allure.step("Enter keyword in search bar and select exact search options");
         SearchExactForDownloadCSV csv = new SearchExactForDownloadCSV(driver);
-        csv.checkdownloadcsv();
-
-
-        
-        String downloadPath = "C:\\Users\\Super\\Downloads";
-        String fileName = "cases.csv";  // Ensure this matches actual downloaded file
-
-       
-        DownloadCSV test = new DownloadCSV(driver);
-
-       
-        test.downloadCsvAndValidate(fileName, 60);
-
-       
-        boolean isDownloaded = test.isFileDownloaded(downloadPath, fileName, 40);
-        Assert.assertTrue(isDownloaded, "CSV file is not downloaded successfully.");
-
-        if (!isDownloaded) {
-            System.out.println("CSV download verification failed.");
-            
-            return;  // Stop execution if the file is missing
-        }
-
-       
-        test.extractColumnsFromCSV("C:\\Users\\Super\\Downloads\\cases.csv","court_name", "party_name");
+        csv.checkdownloadcsv("SOHAIL HAQUE");
+        Allure.step("Click on dowlaod CSV button and check csv file");
+        ExactMatch_DowloadCSV test= new ExactMatch_DowloadCSV(driver);
+        test.downloadCSV();
     }
       
 

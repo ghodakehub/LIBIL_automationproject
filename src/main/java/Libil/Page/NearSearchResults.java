@@ -13,7 +13,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Libil.Utility.Library;
 import Libil.Utility.UtilityClass;
 
 public class NearSearchResults extends BasePage {
@@ -41,12 +40,12 @@ public class NearSearchResults extends BasePage {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollLeft += 500;", slider);
 
 		Thread.sleep(2000);
-		WebElement actionButton = driver.findElement(By.xpath("(//button[@class='btn btn-link'])[10]")); 
+		WebElement actionButton = driver.findElement(By.xpath("(//tr)[11]//button[contains(@class, 'btn btn-link')]")); 
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", actionButton);
 		actionButton.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
-		WebElement element1 = driver.findElement(By.xpath("(//a[text()='Generate Report'])[10]"));
+		WebElement element1 = driver.findElement(By.xpath("//a[@class='dropdown-item' and contains(text(), 'Generate Report')]"));
 		js1.executeScript("arguments[0].click();", element1);
 		
 

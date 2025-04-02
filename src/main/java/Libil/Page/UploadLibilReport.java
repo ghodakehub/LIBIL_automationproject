@@ -98,7 +98,7 @@ public class UploadLibilReport extends BasePage {
 	                closeButton.click();
 	                System.out.println("Clicked on Close button.");
  
-	                // Ensure the original screen is interactable (not just visible)
+	                Thread.sleep(4000);
 	                WebElement originalScreen = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h4[contains(text(),'Admin Dashboard')]")));
 	                System.out.println("Original screen is fully interactive after upload.");
 	            	

@@ -10,13 +10,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class BaseTest2 {
 
+	
+	
     public WebDriver driver;
     public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 
@@ -38,13 +41,13 @@ public class BaseTest2 {
                 defaultChromePrefs.put("download.prompt_for_download", false);
                 defaultChromePrefs.put("safebrowsing.enabled", true);
                 
-                // Merge customPrefs (from the test) into the default prefs
-                if (customPrefs != null && !customPrefs.isEmpty()) {
-                    for (Map.Entry<String, Object> entry : customPrefs.entrySet()) {
-                        defaultChromePrefs.put(entry.getKey(), entry.getValue());
-                    }
-                }
+                defaultChromePrefs.put("profile.default_content_settings.popups", 0);        // Disable popups
+                
+                chromeOptions.setExperimentalOption("prefs", defaultChromePrefs);
 
+                // Set Chrome capabilities
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                 // Set the final prefs
                 chromeOptions.setExperimentalOption("prefs", defaultChromePrefs);
                 

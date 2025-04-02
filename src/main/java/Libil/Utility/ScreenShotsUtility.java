@@ -22,6 +22,12 @@ public class ScreenShotsUtility {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	}
 
+	
+	@Attachment
+	public byte[] saveFailureScreenShot(WebDriver driver) {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		return ts.getScreenshotAs(OutputType.BYTES);
+	}
 	private static void captureScreenshotToReport(WebDriver driver, String screenshotName) {
 		byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		Allure.addAttachment(screenshotName, new ByteArrayInputStream(screenshotBytes));

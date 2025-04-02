@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -112,4 +113,39 @@ public class Library {
 	public static void seleniumWait(int sec, WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
 	}
+	
+	public static void scrollToBottomAndLeft(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Scroll vertically to bottom
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+        // Scroll horizontally to the left
+        js.executeScript("document.querySelector('div').scrollLeft = 0;");
+    }
+
+    // Click the three dots and select an option
+    public static void clickThreeDotsAndSelectOption(WebDriver driver,String optionText) {
+        try {
+            // Scroll to bottom and le]\
+            scrollToBottomAndLeft(driver);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            // Wait for the three dots to be visible
+            WebElement threeDots = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//tr)[11]//button[contains(@class, 'btn btn-link')]")));
+            
+            // Click the three dots
+            threeDots.click();
+            
+            // Select the desired option from the dropdown
+            WebElement option = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='dropdown-item' and contains(text(), '" + optionText +"')]")));
+            option.click();
+
+            System.out.println("Clicked on option: " + optionText);
+        } catch (Exception e) {
+            System.out.println("Failed to click on the option: " + e.getMessage());
+        }
+    }
+
+	
 }
+
