@@ -3,20 +3,16 @@ package Libil.Page;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-
 import javax.mail.MessagingException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.Library;
-import Libil.Utility.UtilityClass;
+
 
 public class UploadMCAReport extends BasePage {
 
@@ -27,7 +23,7 @@ public class UploadMCAReport extends BasePage {
 	
 	 public void searchBarTest() throws MessagingException, IOException
 	 {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 	        try {
 	           
@@ -44,8 +40,7 @@ public class UploadMCAReport extends BasePage {
 		    		Thread.sleep(3000);
 	            
 		    		
-		    		
-		            // Step 2: Click on the three-dot Actions menu
+		    	
 		    		 WebElement actionsMenu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[contains(@class, 'btn btn-link')])[1]")));
 		    		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", actionsMenu);
 		             System.out.println(" Clicked on Actions menu.");
@@ -59,10 +54,7 @@ public class UploadMCAReport extends BasePage {
 		    		element1.click();
 		            Thread.sleep(3000);
 		            
-		           
-	           
-	    	    
-	            // Step 4: Upload a file
+		       
 	            WebElement uploadInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"report_files\"]")));
 	            
 	            
@@ -76,15 +68,14 @@ public class UploadMCAReport extends BasePage {
 	            uploadInput.sendKeys(file.getAbsolutePath());
 	            System.out.println("File uploaded successfully.");
                 Thread.sleep(1000);
-	            // Step 5: Click Submit button
+	           
 	            WebElement submitBtn = driver.findElement(By.xpath("//*[@id=\"mcaReport\"]"));
 	            submitBtn.click();
 	            System.out.println("Clicked on Submit.");
 	            Thread.sleep(2000);
-	            // Step 6: Wait for success message
+	           
 	            try {
 	   
-	            	// Wait for success message popup
 	            	
 	                WebElement successPopup = driver.findElement(By.xpath("//*[contains(text(), 'Uploaded MCA Report!')]"));
 	                System.out.println("Success message displayed.");
@@ -99,13 +90,13 @@ public class UploadMCAReport extends BasePage {
 	               closepop.click();
 	               Thread.sleep(2000);
 	               
-	                // Ensure the original screen is visible
+	               
 	                WebElement originalScreen = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[contains(text(),'Admin Dashboard')]")));
 	                System.out.println("Original screen is visible after upload.");
 
 	            	
 	            } catch (Exception e) {
-	                // Step 7: Handle UI rendering issue
+	                
 	                System.out.println("UI Rendering Issue detected!");
 	               String Screenshot =Libil.Utility.ScreenShotsUtility.takeScreenshot(driver,"UiRenderingissue");
 	               

@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import Libil.Page.LoginPage;
 import Libil.Page.NearSearchResults;
 import Libil.Utility.BaseTest2;

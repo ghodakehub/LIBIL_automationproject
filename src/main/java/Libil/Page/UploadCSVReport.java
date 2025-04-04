@@ -3,19 +3,16 @@ package Libil.Page;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-
 import javax.mail.MessagingException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.Library;
-import Libil.Utility.UtilityClass;
+
 
 public class UploadCSVReport extends BasePage {
 
@@ -26,7 +23,7 @@ public class UploadCSVReport extends BasePage {
 	
 	 public void CheckUploadCSVReport() throws MessagingException, IOException
 	 {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		 try {
 	           
 	            WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Start typing to search']")));

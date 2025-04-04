@@ -111,7 +111,7 @@ public class Library {
 	}
 
 	public static void seleniumWait(int sec, WebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
 	}
 	
 	public static void scrollToBottomAndLeft(WebDriver driver) {

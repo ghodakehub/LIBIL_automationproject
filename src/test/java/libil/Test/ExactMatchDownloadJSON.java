@@ -15,7 +15,6 @@ import Libil.Page.SearchRadioButtons;
 import Libil.Utility.BaseTest2;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
-import Libil.Utility.UtilityClass;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;

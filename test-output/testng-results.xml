@@ -2,24 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-04T13:03:01 IST" name="Default suite" finished-at="2025-04-04T13:05:36 IST" duration-ms="154805">
+  <suite started-at="2025-04-04T16:47:40 IST" name="Default suite" finished-at="2025-04-04T16:48:00 IST" duration-ms="19769">
     <groups>
     </groups>
-    <test started-at="2025-04-04T13:03:01 IST" name="Default test" finished-at="2025-04-04T13:05:36 IST" duration-ms="154805">
-      <class name="libil.Test.NearSearchTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.NearSearchTest@ca93621]" started-at="2025-04-04T13:03:01 IST" name="launchBrowser" finished-at="2025-04-04T13:03:08 IST" duration-ms="6872" status="PASS">
+    <test started-at="2025-04-04T16:47:40 IST" name="Default test" finished-at="2025-04-04T16:48:00 IST" duration-ms="19769">
+      <class name="libil.Test.LoginPageTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:libil.Test.LoginPageTest@4088741b]" started-at="2025-04-04T16:47:40 IST" name="launchBrowser" finished-at="2025-04-04T16:47:50 IST" duration-ms="9777" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyNearSearchOptionsProvideResult()[pri:1, instance:libil.Test.NearSearchTest@ca93621]" started-at="2025-04-04T13:03:08 IST" name="verifyNearSearchOptionsProvideResult" description="Verifing Near search options" finished-at="2025-04-04T13:05:35 IST" duration-ms="146757" status="PASS">
+        <test-method signature="verifyLoginPage()[pri:1, instance:libil.Test.LoginPageTest@4088741b]" started-at="2025-04-04T16:47:50 IST" name="verifyLoginPage" description=" Verify Login Page" finished-at="2025-04-04T16:47:59 IST" duration-ms="8967" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNearSearchOptionsProvideResult -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.NearSearchTest@ca93621]" started-at="2025-04-04T13:05:35 IST" name="closeBrowser" finished-at="2025-04-04T13:05:36 IST" duration-ms="585" status="PASS">
+        </test-method> <!-- verifyLoginPage -->
+        <test-method is-config="true" signature="finish(org.testng.ITestResult)[pri:0, instance:libil.Test.LoginPageTest@4088741b]" started-at="2025-04-04T16:47:59 IST" name="finish" finished-at="2025-04-04T16:47:59 IST" duration-ms="20" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginPage status=SUCCESS method=LoginPageTest.verifyLoginPage()[pri:1, instance:libil.Test.LoginPageTest@4088741b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finish -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:libil.Test.LoginPageTest@4088741b]" started-at="2025-04-04T16:48:00 IST" name="closeBrowser" finished-at="2025-04-04T16:48:00 IST" duration-ms="470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- libil.Test.NearSearchTest -->
+      </class> <!-- libil.Test.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

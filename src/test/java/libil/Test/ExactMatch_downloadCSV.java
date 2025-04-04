@@ -6,9 +6,7 @@ import javax.mail.MessagingException;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import Libil.Page.LoginPage;
 import Libil.Page.SearchExactForDownloadCSV;
 import Libil.Page.ExactMatch_DowloadCSV;
@@ -20,7 +18,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-@Listeners(Libil.Utility.newallurelistner.class)
 public class ExactMatch_downloadCSV extends BaseTest2 {
 
 	

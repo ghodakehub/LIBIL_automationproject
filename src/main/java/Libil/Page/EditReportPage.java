@@ -21,10 +21,10 @@ public class EditReportPage extends BasePage {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//*[@id=\"hideDiv\"]/section[1]/div/div/div[1]/div[2]/div/button")   // Example locator, replace with actual
+	@FindBy(xpath = "//*[@id=\"hideDiv\"]/section[1]/div/div/div[1]/div[2]/div/button")   
     WebElement choosebtn;
 	
-	 @FindBy(xpath = "//a[contains(text(),'Edit Report')]")   // Example locator, replace with actual
+	 @FindBy(xpath = "//a[contains(text(),'Edit Report')]")   
 	    WebElement editButton;
 
 	    @FindBy(id = "subjectName")
@@ -33,10 +33,10 @@ public class EditReportPage extends BasePage {
 	    @FindBy(id = "partyAddress")
 	    WebElement address;
 
-	    @FindBy(xpath = "//*[@id=\"saveButton\"]")  // Example locator, replace with actual
+	    @FindBy(xpath = "//*[@id=\"saveButton\"]")  
 	    WebElement saveButton1;
 
-	    @FindBy(xpath = "//div[contains(text(),'Saved Successfully')]") // Example success message locator
+	    @FindBy(xpath = "//div[contains(text(),'Saved Successfully')]") 
 	    WebElement successMessage;
 
 
@@ -61,7 +61,7 @@ public class EditReportPage extends BasePage {
 			js1.executeScript("arguments[0].scrollIntoView(true)", element1);
 			element1.click();
 			
-				 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+				 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		            // Locate the search box and enter a company name
 		            WebElement searchBox = driver.findElement(By.xpath("//*[@id=\"searchText\"]"));
 		            searchBox.clear();
@@ -136,7 +136,7 @@ public class EditReportPage extends BasePage {
 		    	 js.executeScript("arguments[0].click();", chooseBtn);
 		    	 Thread.sleep(2000);
 
-		    	 // Wait until "Save Edits" button is clickable
+		   
 		    	 WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    	 WebElement saveButton1 = wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Save Edits')]")));
 		    	 js.executeScript("arguments[0].click();", saveButton1);
@@ -154,7 +154,7 @@ public class EditReportPage extends BasePage {
 	        try {
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            WebElement editMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
-	                    By.xpath("//div[contains(text(),'You can Edit Now')]"))); // Adjust XPath as needed
+	                    By.xpath("//div[contains(text(),'You can Edit Now')]"))); 
 
 	            String messageText = editMessage.getText();
 	            System.out.println("Edit Message Displayed: " + messageText);

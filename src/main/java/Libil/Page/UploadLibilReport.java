@@ -5,19 +5,15 @@ import java.io.IOException;
 import java.time.Duration;
 
 import javax.mail.MessagingException;
-
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Libil.Utility.ForMultiplemailReceipent;
 import Libil.Utility.Library;
-import Libil.Utility.UtilityClass;
+
 
 public class UploadLibilReport extends BasePage {
 
@@ -28,7 +24,7 @@ public class UploadLibilReport extends BasePage {
 	
 	 public void searchBarTest() throws MessagingException, IOException
 	 {
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 	        try {
 	           
@@ -43,9 +39,7 @@ public class UploadLibilReport extends BasePage {
 	    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollLeft += 500;", slider);
 	    		Thread.sleep(3000);
                
-	    		
-	    		
-	            // Step 2: Click on the three-dot Actions menu
+	  
 	    		 WebElement actionsMenu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[contains(@class, 'btn btn-link')])[1]")));
 	    		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", actionsMenu);
 	             System.out.println(" Clicked on Actions menu.");
@@ -59,7 +53,6 @@ public class UploadLibilReport extends BasePage {
 	    		element1.click();
 	            Thread.sleep(3000);
 
-	            // Step 4: Upload a file
 	            WebElement uploadInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"libil_files\"]")));
 	            
 	            
@@ -73,14 +66,13 @@ public class UploadLibilReport extends BasePage {
 	            uploadInput.sendKeys(file.getAbsolutePath());
 	            System.out.println("File uploaded successfully.");
                 Thread.sleep(1000);
-	            // Step 5: Click Submit button
+	          
 	            WebElement submitBtn = driver.findElement(By.xpath("//*[@id=\"libilReport\"]"));
 	            submitBtn.click();
 	            System.out.println("Clicked on Submit.");
 	            
 	            try {
 	   
-	            	// Wait for success message popup
 	            	
 	                WebElement successPopup = driver.findElement(By.xpath("//*[contains(text(), 'Uploaded Libil Report!')]"));
 	                System.out.println("Success message displayed.");
@@ -103,7 +95,7 @@ public class UploadLibilReport extends BasePage {
 	                System.out.println("Original screen is fully interactive after upload.");
 	            	
 	            } catch (Exception e) {
-	                // Step 7: Handle UI rendering issue
+	                
 	                System.out.println("UI Rendering Issue detected!");
 	                
 	               String Screenshot = Libil.Utility.ScreenShotsUtility.takeScreenshot(driver,"UiRenderingissue");

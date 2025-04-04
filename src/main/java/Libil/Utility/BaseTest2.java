@@ -1,5 +1,6 @@
 package Libil.Utility;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,7 +79,7 @@ public class BaseTest2 {
             default:
                 throw new IllegalArgumentException("Invalid browser specified: " + browser);
         }
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         driver.get(ConfingDataProvider.URL);
         tdriver.set(driver);

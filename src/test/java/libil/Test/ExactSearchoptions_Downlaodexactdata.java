@@ -3,8 +3,6 @@ package libil.Test;
 import java.io.IOException;
 
 import javax.mail.MessagingException;
-
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Listeners;
@@ -13,10 +11,8 @@ import Libil.Page.ExactMatch_DownloadExactdata;
 import Libil.Page.LoginPage;
 import Libil.Page.SearchExactForDownloadCSV;
 import Libil.Utility.BaseTest2;
-import Libil.Utility.ConfigReader;
 import Libil.Utility.ConfingDataProvider;
 import Libil.Utility.ForMultiplemailReceipent;
-import Libil.Utility.UtilityClass;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -25,10 +21,6 @@ import io.qameta.allure.SeverityLevel;
 @Listeners(Libil.Utility.newallurelistner.class)
 public class ExactSearchoptions_Downlaodexactdata extends BaseTest2{
 
-
-	
-		
-		
 	@Test(priority =1, description="Verify Downlaod exact data json File")
 	@Feature(" Exact Search Option - Download ExactData button")
 	@Description("Test Case Descriptions = Verify for exact search exact data JSON file downlaoded successfully")

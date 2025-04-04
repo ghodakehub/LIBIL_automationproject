@@ -52,7 +52,7 @@ public class NearSearchResults extends BasePage {
 		 try {
 	           
 			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(5)); 
-              //Click "Submit"
+              
              WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"searchForRelatedCompany\"]")));
              submitButton.click();
 
