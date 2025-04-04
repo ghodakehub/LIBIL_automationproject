@@ -1,0 +1,384 @@
+{
+  "data": {
+    "party": {
+      "party_name": "sohail  w/3 haque",
+      "libil_score": 1350,
+      "is_recommended": "no",
+      "summary_items": [
+        {
+          "case_type": "Civil",
+          "cases_pending": 0,
+          "cases_disposed": 10,
+          "cases_in_favor": 5,
+          "total_cases": 10
+        },
+        {
+          "case_type": "Criminal",
+          "cases_pending": 0,
+          "cases_disposed": 0,
+          "cases_in_favor": 0,
+          "total_cases": 0
+        },
+        {
+          "case_type": "Others",
+          "cases_pending": 0,
+          "cases_disposed": 0,
+          "cases_in_favor": 0,
+          "total_cases": 0
+        }
+      ],
+      "courts": [
+        {
+          "name": "CJM Div. Saran at Chapra Saran Bihar",
+          "cases": [
+            {
+              "case_number": "4/Cr.case Complt.(p)/2021",
+              "party_name": [
+                "Mohammad Sohail Haque vs. Sagar Raj"
+              ],
+              "petitioner": "Mohammad Sohail Haque",
+              "respondent": "Sagar Raj",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Pending",
+              "outcome": "NA",
+              "period": 0.8,
+              "decision_date": null,
+              "state_name": "Bihar",
+              "court_type": "District court",
+              "acts": null,
+              "other_info": [],
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "BRSR020000142021",
+              "doc_score": 899,
+              "party_type": "respondent",
+              "in_favor": false
+            }
+          ]
+        },
+        {
+          "name": "Additional Chief Judicial Magistrate, Uluberia, Howrah Howrah West Bengal",
+          "cases": [
+            {
+              "case_number": "420/Misc. Execution Case/2014",
+              "party_name": [
+                "TANVI QUERSHI AND 1 MINOR vs. SOHAIL HAQUE MOLLA"
+              ],
+              "petitioner": "TANVI QUERSHI AND 1 MINOR",
+              "respondent": "SOHAIL HAQUE MOLLA",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Disposed",
+              "outcome": "other",
+              "period": 0.8,
+              "decision_date": "2018-04-25T00:00:00.000000Z",
+              "state_name": "West Bengal",
+              "court_type": "District court",
+              "acts": null,
+              "other_info": [],
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "WBHW120002632014",
+              "doc_score": 810,
+              "party_type": "respondent",
+              "in_favor": true
+            }
+          ]
+        },
+        {
+          "name": "District and Sessions Judge, Alipur, South 24 Pgs South 24 Parganas West Bengal",
+          "cases": [
+            {
+              "case_number": "4856/Bail/2019",
+              "party_name": [
+                "STATE OF WEST BENGAL vs. NAZRUL HAQUE @ SOHAIL AND ORS"
+              ],
+              "petitioner": "STATE OF WEST BENGAL",
+              "respondent": "NAZRUL HAQUE @ SOHAIL AND ORS",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Disposed",
+              "outcome": "other",
+              "period": 0.8,
+              "decision_date": "2019-09-06T00:00:00.000000Z",
+              "state_name": "West Bengal",
+              "court_type": "District court",
+              "acts": null,
+              "other_info": [],
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "WBSP010107872019",
+              "doc_score": 573,
+              "party_type": "respondent",
+              "in_favor": true
+            }
+          ]
+        },
+        {
+          "name": "Judicial First Class Magistrate Court,Angamaly Ernakulam Kerala",
+          "cases": [
+            {
+              "case_number": "100419/CC/2018",
+              "party_name": [
+                "State of Kerala vs. Sohail Haque, S/o Atharul Haque"
+              ],
+              "petitioner": "State of Kerala",
+              "respondent": "Sohail Haque, S/o Atharul Haque",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Pending",
+              "outcome": "NA",
+              "period": 0.8,
+              "decision_date": null,
+              "state_name": "Kerala",
+              "court_type": "District court",
+              "acts": null,
+              "other_info": [],
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "KLER630001122018",
+              "doc_score": 500,
+              "party_type": "respondent",
+              "in_favor": false
+            }
+          ]
+        },
+        {
+          "name": "Railway Mgistrate, Howrah Howrah West Bengal",
+          "cases": [
+            {
+              "case_number": "177/R.a/2023",
+              "party_name": [
+                "RAILWAY vs. Sk. Ziaul Haque and Sk. Sohail Anwar"
+              ],
+              "petitioner": "RAILWAY",
+              "respondent": "Sk. Ziaul Haque and Sk. Sohail Anwar",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Disposed",
+              "outcome": "other",
+              "period": 0.8,
+              "decision_date": null,
+              "state_name": "West Bengal",
+              "court_type": "District court",
+              "acts": null,
+              "other_info": [],
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "WBHW050001812023",
+              "doc_score": 278,
+              "party_type": "respondent",
+              "in_favor": true
+            }
+          ]
+        },
+        {
+          "name": "Additional Chief Judicial Magistrate, Barrackpore, North 24 Pgs. North 24 Parganas West Bengal",
+          "cases": [
+            {
+              "case_number": "7/Misc Crl Case/2025",
+              "party_name": [
+                "Ritika Dhar vs. Sarif Mandal,Sajahan Mandal,Sumsunnahar Bibi Mandal,Sehnaz Haque,Toton Mandal And Sohail Mondal"
+              ],
+              "petitioner": "Ritika Dhar",
+              "respondent": "Sarif Mandal,Sajahan Mandal,Sumsunnahar Bibi Mandal,Sehnaz Haque,Toton Mandal And Sohail Mondal",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Pending",
+              "outcome": "NA",
+              "period": 0.8,
+              "decision_date": null,
+              "state_name": "West Bengal",
+              "court_type": "District court",
+              "acts": null,
+              "other_info": [],
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "WBNP150000482025",
+              "doc_score": 127,
+              "party_type": "respondent",
+              "in_favor": false
+            }
+          ]
+        },
+        {
+          "name": "Calcutta High Court",
+          "cases": [
+            {
+              "case_number": "402/CRM(A)/2022",
+              "party_name": [
+                "SOHIL HAQUE@SUYEL HOQUE vs State of West Bengal",
+                "SOHIL HAQUE@SUYEL HOQUE vs. State of West Bengal"
+              ],
+              "petitioner": "SOHIL HAQUE@SUYEL HOQUE",
+              "respondent": "State of West Bengal",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Pending",
+              "outcome": "NA",
+              "period": 0.8,
+              "decision_date": null,
+              "court_type": "hc",
+              "acts": null,
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "WBCHCJ0036902022",
+              "doc_score": 1370,
+              "party_type": "respondent",
+              "in_favor": false
+            }
+          ]
+        },
+        {
+          "name": "High Court of Orissa",
+          "cases": [
+            {
+              "case_number": "1959/BLAPL/2023",
+              "party_name": [
+                "MD. SOHIL ALLI HAQUE @ MD. SOALL ALI HUQUE vs STATE OF ODISHA"
+              ],
+              "petitioner": "MD. SOHIL ALLI HAQUE @ MD. SOALL ALI HUQUE",
+              "respondent": "STATE OF ODISHA",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Pending",
+              "outcome": "NA",
+              "period": 0.8,
+              "decision_date": null,
+              "court_type": "hc",
+              "acts": null,
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "ODHC010127122023",
+              "doc_score": 299,
+              "party_type": "respondent",
+              "in_favor": false
+            },
+            {
+              "case_number": "8117/BLAPL/2023",
+              "party_name": [
+                "MD. SOHIL ALLI HAQUE @ MD. SOALL ALI HUQUE vs STATE OF ODISHA"
+              ],
+              "petitioner": "MD. SOHIL ALLI HAQUE @ MD. SOALL ALI HUQUE",
+              "respondent": "STATE OF ODISHA",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Disposed",
+              "outcome": "other",
+              "period": 0.8,
+              "decision_date": null,
+              "court_type": "hc",
+              "acts": null,
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "",
+              "_id": "ODHC010554832023",
+              "doc_score": 299,
+              "party_type": "respondent",
+              "in_favor": true
+            }
+          ]
+        },
+        {
+          "name": "Bombay High Court",
+          "cases": [
+            {
+              "case_number": "6497//1999",
+              "party_name": [
+                "DASHRATH BARKU NIKAM vs MOHAMMAD ISHAQUE HAJI ABDUL REHMAN (DECD.) BY LRS.",
+                "DASHRATH BARKU NIKAM -  vs MOHAMMAD ISHAQUE HAJI ABDUL REHMAN (DECD.) BY LRS. - ",
+                "DASHRATH BARKU NIKAM -  vs SHAMSUL HAQUE MD. ISHAQUE (DIED) - THROUGH HIS LEGAL HEIRS 1.1.1.AKHTAR BANI W/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs ABDULAZIZ MD. ISHAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs ABDUL RASHEED MD. ISHAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs ABDUL HAMEED MOHD. ISHAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs MEHARUNNISA KHUSHEED AHMED - ",
+                "DASHRATH BARKU NIKAM -  vs AFAJULUNNISA KHURSID AHMED - ",
+                "DASHRATH BARKU NIKAM -  vs SAIEEDA W/O MD. ISHAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs RASIA D/O MD. ISHAK - ",
+                "DASHRATH BARKU NIKAM -  vs ABUBAKAR S/O MD. ISHAK - ",
+                "DASHRATH BARKU NIKAM -  vs FARROKHA D/O MOHD. ISHAK - ",
+                "DASHRATH BARKU NIKAM -  vs AKHTAR BANI W/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs ANISABANO D/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs BALKIS BANO D/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs FARIDABANO D/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs ZARINABANO D/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs SHABNAMBANO D/O SHAMSHUL HQUE - ",
+                "DASHRATH BARKU NIKAM -  vs NAZINABAN D/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs SABABANO D/O SHAMSHUL HAQUE - ",
+                "DASHRATH BARKU NIKAM -  vs SOHAIL AHMED SHAMSHUL HAQUE - "
+              ],
+              "petitioner": "DASHRATH BARKU NIKAM",
+              "respondent": "MOHAMMAD ISHAQUE HAJI ABDUL REHMAN (DECD.) BY LRS.",
+              "cause": "NA",
+              "casetype": "civil",
+              "act_categories": "",
+              "act_sections": "",
+              "status": "Disposed",
+              "outcome": "dismissed",
+              "period": 0.8,
+              "decision_date": "2017-07-26T00:00:00.000000Z",
+              "court_type": "hc",
+              "acts": null,
+              "cnr_no": "",
+              "filing_number": "",
+              "filing_date": "",
+              "order_links": [],
+              "case_stage": "ORDER MATTERS",
+              "_id": "01001377341999",
+              "doc_score": 45,
+              "party_type": "respondent",
+              "in_favor": true
+            }
+          ]
+        }
+      ]
+    },
+    "libil_score": 1350,
+    "reporturl": ""
+  }
+}
