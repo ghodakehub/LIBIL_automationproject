@@ -27,7 +27,7 @@ public class HomePage extends BasePage {
            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
            try {
-               for (int page = 1; page <= 88; page++) {
+               for (int page = 1; page <= 106; page++) {
                    try {
                        // Wait for pagination links to be visible
                        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.pagination li.page-item a.page-link")));
