@@ -15,12 +15,12 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(how = How.XPATH, using = "//a[@class='btn btn-primary px-4 rounded-5 fs-14']")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"navbarNav\"]/ul/li[2]/a")
 	private WebElement FIRST_LOGIN_BUTTON;
 
-	@FindBy(how = How.XPATH, using = "(//span[@class='me-2'])[1]")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"login-modal\"]/div/div/div[2]/div/div[1]/div/button/a/div/span")
 	private WebElement SECOND_LOGIN_BUTTON;
-
+	
 	@FindBy(how = How.XPATH, using = "//input[@id='email']")
 	private WebElement EMAIL;
 
